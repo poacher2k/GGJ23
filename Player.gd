@@ -14,9 +14,8 @@ func _physics_process(delta):
 	# Add the gravity.
 	if not is_on_floor():
 		velocity.y += gravity * delta
-		rotate(0.01 * ROTATION_VELOCITY)
 
-	if Input.is_action_just_pressed("Shoot") and not is_on_floor():
+	if Input.is_action_just_pressed("Shoot"):
 		shoot()
 		
 	if Input.is_action_just_released("Shoot"):
@@ -26,6 +25,8 @@ func _physics_process(delta):
 		var posDiff : Vector2 = shot_position - global_position
 		print(posDiff)
 		velocity = posDiff.normalized() * HOOKSHOT_SPEED
+	else:
+		rotate(0.01 * ROTATION_VELOCITY)
 	
 	move_and_slide()
 

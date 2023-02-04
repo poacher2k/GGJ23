@@ -1,0 +1,88 @@
+[gd_scene load_steps=5 format=3 uid="uid://bpda3d2oft7a3"]
+
+[ext_resource type="Texture2D" uid="uid://et15gjmq01c6" path="res://Assets/bg_1.5.png" id="1_dwvdf"]
+[ext_resource type="Texture2D" uid="uid://dfwjwqqm7xynd" path="res://Assets/BG_2.5.png" id="2_a4eef"]
+[ext_resource type="Texture2D" uid="uid://dihnykmhbuceb" path="res://Assets/BG_3.5.png" id="3_75p5x"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ujas"]
+size = Vector2(320, 16)
+
+[node name="BG" type="Node2D"]
+
+[node name="Dirt" type="Node2D" parent="."]
+
+[node name="Sprite2D" type="Sprite2D" parent="Dirt"]
+position = Vector2(32, 32)
+texture = ExtResource("1_dwvdf")
+
+[node name="Sprite2D2" type="Sprite2D" parent="Dirt"]
+position = Vector2(32, 96)
+texture = ExtResource("2_a4eef")
+
+[node name="Sprite2D3" type="Sprite2D" parent="Dirt"]
+position = Vector2(32, 160)
+texture = ExtResource("3_75p5x")
+
+[node name="Sprite2D4" type="Sprite2D" parent="Dirt"]
+position = Vector2(96, 32)
+texture = ExtResource("1_dwvdf")
+
+[node name="Sprite2D5" type="Sprite2D" parent="Dirt"]
+position = Vector2(96, 96)
+texture = ExtResource("2_a4eef")
+
+[node name="Sprite2D6" type="Sprite2D" parent="Dirt"]
+position = Vector2(96, 160)
+texture = ExtResource("3_75p5x")
+
+[node name="Sprite2D7" type="Sprite2D" parent="Dirt"]
+position = Vector2(160, 32)
+texture = ExtResource("1_dwvdf")
+
+[node name="Sprite2D8" type="Sprite2D" parent="Dirt"]
+position = Vector2(160, 96)
+texture = ExtResource("2_a4eef")
+
+[node name="Sprite2D9" type="Sprite2D" parent="Dirt"]
+position = Vector2(160, 160)
+texture = ExtResource("3_75p5x")
+
+[node name="Sprite2D10" type="Sprite2D" parent="Dirt"]
+position = Vector2(224, 32)
+texture = ExtResource("1_dwvdf")
+
+[node name="Sprite2D11" type="Sprite2D" parent="Dirt"]
+position = Vector2(224, 96)
+texture = ExtResource("2_a4eef")
+
+[node name="Sprite2D12" type="Sprite2D" parent="Dirt"]
+position = Vector2(224, 160)
+texture = ExtResource("3_75p5x")
+
+[node name="Sprite2D13" type="Sprite2D" parent="Dirt"]
+position = Vector2(288, 32)
+texture = ExtResource("1_dwvdf")
+
+[node name="Sprite2D14" type="Sprite2D" parent="Dirt"]
+position = Vector2(288, 96)
+texture = ExtResource("2_a4eef")
+
+[node name="Sprite2D15" type="Sprite2D" parent="Dirt"]
+position = Vector2(288, 160)
+texture = ExtResource("3_75p5x")
+
+[node name="Ceiling" type="StaticBody2D" parent="."]
+position = Vector2(160, 8)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling"]
+shape = SubResource("RectangleShape2D_5ujas")
+
+[node name="Ground" type="StaticBody2D" parent="."]
+position = Vector2(160, 184)
+collision_layer = 2
+collision_mask = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
+shape = SubResource("RectangleShape2D_5ujas")

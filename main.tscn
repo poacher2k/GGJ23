@@ -1,38 +1,24 @@
-[gd_scene load_steps=4 format=3 uid="uid://doq07kiyhro1l"]
+[gd_scene load_steps=5 format=3 uid="uid://doq07kiyhro1l"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_7ucny"]
-
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_5ujas"]
-size = Vector2(1153, 20)
+[ext_resource type="Script" path="res://main.gd" id="1_vulhb"]
+[ext_resource type="PackedScene" uid="uid://bpda3d2oft7a3" path="res://bg.tscn" id="2_q280r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jt0dh"]
-radius = 8.0
-height = 32.0
+radius = 4.0
+height = 16.0
 
 [node name="Main" type="Node2D"]
+script = ExtResource("1_vulhb")
 
-[node name="Ceiling" type="StaticBody2D" parent="."]
-position = Vector2(120, 16)
-collision_layer = 2
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ceiling"]
-position = Vector2(455.5, 0)
-shape = SubResource("RectangleShape2D_5ujas")
-
-[node name="Ground" type="StaticBody2D" parent="."]
-position = Vector2(120, 632)
-collision_layer = 2
-collision_mask = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Ground"]
-position = Vector2(455.5, 0)
-shape = SubResource("RectangleShape2D_5ujas")
+[node name="BG" parent="." instance=ExtResource("2_q280r")]
 
 [node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(144, 264)
+position = Vector2(40, 80)
 collision_mask = 3
 script = ExtResource("1_7ucny")
+HOOKSHOT_SPEED = 100.0
+ROTATION_VELOCITY = 12.0
 
 [node name="PlayerCollisionShape" type="CollisionShape2D" parent="Player"]
 shape = SubResource("CapsuleShape2D_jt0dh")
