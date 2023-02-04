@@ -3,15 +3,15 @@
 importer="texture"
 type="CompressedTexture2D"
 uid="uid://dlfu6nlfynxmt"
-path="res://.godot/imported/bottom_1.png-f7872f5e19b224a61daf7938dde98879.ctex"
+path="res://.godot/imported/bottom_1.png-8ecc67fa534259299f6cfe12c9583b93.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Background/bottom_1.png"
-dest_files=["res://.godot/imported/bottom_1.png-f7872f5e19b224a61daf7938dde98879.ctex"]
+source_file="res://Assets/Obstacles/bottom_1.png"
+dest_files=["res://.godot/imported/bottom_1.png-8ecc67fa534259299f6cfe12c9583b93.ctex"]
 
 [params]
 
