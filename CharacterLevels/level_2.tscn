@@ -1,0 +1,13 @@
+[gd_scene load_steps=6 format=3 uid="uid://dtotkisq8xxhx"]
+
+[ext_resource type="PackedScene" path="res://character_level_images.tscn" id="1_j23aw"]
+[ext_resource type="Texture2D" uid="uid://d6ikegxpwc2m" path="res://Assets/Character/seed_passive_2.png" id="2_n061b"]
+[ext_resource type="Texture2D" uid="uid://bgy4lcajf8ook" path="res://Assets/Character/seed_passive_2_n.png" id="3_x88pf"]
+[ext_resource type="Texture2D" uid="uid://bsppw7khfuqpc" path="res://Assets/Character/seed_active_2.png" id="4_ghcgo"]
+[ext_resource type="Texture2D" uid="uid://c8ycx3cdlw5p5" path="res://Assets/Character/seed_active_2_n.png" id="5_cc8kn"]
+
+[node name="level_2" instance=ExtResource("1_j23aw")]
+passive = ExtResource("2_n061b")
+passive_n = ExtResource("3_x88pf")
+active = ExtResource("4_ghcgo")
+active_n = ExtResource("5_cc8kn")
