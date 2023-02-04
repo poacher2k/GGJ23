@@ -17,13 +17,14 @@ func _physics_process(delta):
 
 	if Input.is_action_just_pressed("Shoot"):
 		shoot()
+#		$AnimatedSprite2D.play("active")
 		
 	if Input.is_action_just_released("Shoot"):
+#		$AnimatedSprite2D.play("passive")
 		shot_position = null
 	
 	if shot_position:
 		var posDiff : Vector2 = shot_position - global_position
-		print(posDiff)
 		velocity = posDiff.normalized() * HOOKSHOT_SPEED
 	else:
 		rotate(0.01 * ROTATION_VELOCITY)
@@ -36,4 +37,4 @@ func shoot():
 	if point:
 		shot_position = $RayCast2D.get_collision_point()
 		
-	
+

@@ -1,28 +1,52 @@
 [gd_scene load_steps=5 format=3 uid="uid://doq07kiyhro1l"]
 
-[ext_resource type="Script" path="res://Player.gd" id="1_7ucny"]
 [ext_resource type="Script" path="res://main.gd" id="1_vulhb"]
 [ext_resource type="PackedScene" uid="uid://dhtjouk537h52" path="res://bg.tscn" id="2_q280r"]
+[ext_resource type="PackedScene" uid="uid://cb6tickm0tymh" path="res://player.tscn" id="3_73rgr"]
 
-[sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jt0dh"]
-radius = 4.0
-height = 16.0
+[sub_resource type="CircleShape2D" id="CircleShape2D_3844m"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_vulhb")
+bgScene = ExtResource("2_q280r")
+
+[node name="GameBounds" type="Node2D" parent="."]
+unique_name_in_owner = true
 
 [node name="BG" parent="." instance=ExtResource("2_q280r")]
 
-[node name="Player" type="CharacterBody2D" parent="."]
-position = Vector2(40, 80)
-collision_mask = 3
-script = ExtResource("1_7ucny")
-HOOKSHOT_SPEED = 100.0
-ROTATION_VELOCITY = 12.0
+[node name="Player" parent="." instance=ExtResource("3_73rgr")]
 
-[node name="PlayerCollisionShape" type="CollisionShape2D" parent="Player"]
-shape = SubResource("CapsuleShape2D_jt0dh")
+[node name="Items" type="Node2D" parent="."]
 
-[node name="RayCast2D" type="RayCast2D" parent="Player"]
-target_position = Vector2(2.08165e-12, -2000)
-collision_mask = 2
+[node name="Item" type="Area2D" parent="Items"]
+position = Vector2(160, 80)
+collision_layer = 0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Items/Item"]
+shape = SubResource("CircleShape2D_3844m")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
+follow_viewport_enabled = true
+
+[node name="Control" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control"]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
+text = "123"
+
+[node name="Control2" type="Control" parent="CanvasLayer"]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Container" type="Container" parent="."]
+offset_right = 40.0
+offset_bottom = 40.0
