@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://ymyr0jqgrhij"
-path="res://.godot/imported/seed_passive_n.png-930a0a3c6bb3f1bf68c2bfd5cd4bd411.ctex"
+uid="uid://df57arlyshoh3"
+path="res://.godot/imported/seed_passive_4.png-8123ae123d06d77e6819e303a702e884.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Assets/Character/seed_passive_n.png"
-dest_files=["res://.godot/imported/seed_passive_n.png-930a0a3c6bb3f1bf68c2bfd5cd4bd411.ctex"]
+source_file="res://Assets/Character/seed_passive_4.png"
+dest_files=["res://.godot/imported/seed_passive_4.png-8123ae123d06d77e6819e303a702e884.ctex"]
 
 [params]
 
