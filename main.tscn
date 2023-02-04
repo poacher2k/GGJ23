@@ -1,52 +1,41 @@
-[gd_scene load_steps=5 format=3 uid="uid://doq07kiyhro1l"]
+[gd_scene load_steps=6 format=3 uid="uid://doq07kiyhro1l"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_vulhb"]
 [ext_resource type="PackedScene" uid="uid://dhtjouk537h52" path="res://bg.tscn" id="2_q280r"]
+[ext_resource type="Script" path="res://CanvasLayer.gd" id="3_18qy5"]
 [ext_resource type="PackedScene" uid="uid://cb6tickm0tymh" path="res://player.tscn" id="3_73rgr"]
-
-[sub_resource type="CircleShape2D" id="CircleShape2D_3844m"]
+[ext_resource type="PackedScene" uid="uid://fyi17kjmlh6u" path="res://item.tscn" id="4_xt46l"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_vulhb")
 bgScene = ExtResource("2_q280r")
+playerScene = ExtResource("3_73rgr")
+itemScene = ExtResource("4_xt46l")
 
 [node name="GameBounds" type="Node2D" parent="."]
 unique_name_in_owner = true
 
-[node name="BG" parent="." instance=ExtResource("2_q280r")]
-
-[node name="Player" parent="." instance=ExtResource("3_73rgr")]
-
-[node name="Items" type="Node2D" parent="."]
-
-[node name="Item" type="Area2D" parent="Items"]
-position = Vector2(160, 80)
-collision_layer = 0
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Items/Item"]
-shape = SubResource("CircleShape2D_3844m")
-
-[node name="CanvasLayer" type="CanvasLayer" parent="."]
+[node name="UI" type="CanvasLayer" parent="." groups=["UI"]]
 follow_viewport_enabled = true
+script = ExtResource("3_18qy5")
 
-[node name="Control" type="Control" parent="CanvasLayer"]
+[node name="Control" type="Control" parent="UI"]
 layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
+anchors_preset = 1
+anchor_left = 1.0
+anchor_right = 1.0
+offset_left = -170.0
+offset_right = -130.0
 offset_bottom = 40.0
+grow_horizontal = 0
+size_flags_horizontal = 4
+size_flags_vertical = 4
 
-[node name="RichTextLabel" type="RichTextLabel" parent="CanvasLayer/Control"]
-layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Label" type="Label" parent="UI/Control"]
+layout_mode = 1
+offset_right = 28.0
+offset_bottom = 26.0
 text = "123"
 
-[node name="Control2" type="Control" parent="CanvasLayer"]
-layout_mode = 3
-anchors_preset = 0
-offset_right = 40.0
-offset_bottom = 40.0
-
-[node name="Container" type="Container" parent="."]
-offset_right = 40.0
-offset_bottom = 40.0
+[node name="Items" type="Node2D" parent="."]
+unique_name_in_owner = true

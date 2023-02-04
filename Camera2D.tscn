@@ -1,0 +1,9 @@
+[gd_scene load_steps=2 format=3 uid="uid://eu4kh7r6mst1"]
+
+[ext_resource type="Script" path="res://Camera2D.gd" id="1_gwoh6"]
+
+[node name="Camera2D" type="Camera2D"]
+limit_top = 0
+limit_bottom = 192
+limit_smoothed = true
+script = ExtResource("1_gwoh6")

@@ -1,0 +1,15 @@
+[gd_scene load_steps=3 format=3 uid="uid://fyi17kjmlh6u"]
+
+[ext_resource type="Script" path="res://Item.gd" id="1_85acx"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_3844m"]
+
+[node name="Item" type="Area2D"]
+position = Vector2(160, 80)
+collision_layer = 4
+script = ExtResource("1_85acx")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+shape = SubResource("CircleShape2D_3844m")
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

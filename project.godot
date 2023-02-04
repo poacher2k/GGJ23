@@ -36,6 +36,12 @@ Restart={
 ]
 }
 
+[layer_names]
+
+2d_physics/layer_1="Player"
+2d_physics/layer_2="HookableWall"
+2d_physics/layer_3="Item"
+
 [physics]
 
 2d/default_gravity=125.0
