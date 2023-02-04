@@ -1,14 +1,14 @@
 [gd_scene load_steps=6 format=3 uid="uid://doq07kiyhro1l"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_vulhb"]
-[ext_resource type="PackedScene" uid="uid://dhtjouk537h52" path="res://bg.tscn" id="2_q280r"]
+[ext_resource type="PackedScene" uid="uid://bhpea17l31h26" path="res://bg.tscn" id="2_jt4xg"]
 [ext_resource type="Script" path="res://CanvasLayer.gd" id="3_18qy5"]
 [ext_resource type="PackedScene" uid="uid://cb6tickm0tymh" path="res://player.tscn" id="3_73rgr"]
 [ext_resource type="PackedScene" uid="uid://fyi17kjmlh6u" path="res://item.tscn" id="4_xt46l"]
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_vulhb")
-bgScene = ExtResource("2_q280r")
+bgScene = ExtResource("2_jt4xg")
 playerScene = ExtResource("3_73rgr")
 itemScene = ExtResource("4_xt46l")
 

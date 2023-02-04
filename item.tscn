@@ -3,6 +3,7 @@
 [ext_resource type="Script" path="res://Item.gd" id="1_85acx"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3844m"]
+radius = 8.0
 
 [node name="Item" type="Area2D"]
 position = Vector2(160, 80)
