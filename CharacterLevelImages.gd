@@ -1,10 +1,12 @@
 extends Node2D
 
+class_name CharacterLevel
+
 @export var level : int
-@export var passive : ImageTexture
-@export var passive_n : ImageTexture
-@export var active : ImageTexture
-@export var active_n : ImageTexture
+@export var passive : CompressedTexture2D
+@export var passive_n : CompressedTexture2D
+@export var active : CompressedTexture2D
+@export var active_n : CompressedTexture2D
 
 
 # Called when the node enters the scene tree for the first time.

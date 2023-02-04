@@ -5,12 +5,28 @@ const SPEED = 300.0
 @export var HOOKSHOT_SPEED = 350.0
 @export var ROTATION_VELOCITY = 10.0
 @export var FLOOR_FRICTION = 0.01
+@export var level_images : Array[PackedScene]
 
 # Get the gravity from the project settings to be synced with RigidBody nodes.
 var gravity = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 var shot_position = null
 @onready var score = 0
+
+var levels = []
+
+var currentLevel : CharacterLevel
+@onready var texture = $Sprite2D.texture
+
+
+func _ready():
+	print($Sprite2D.get_canvas_item())
+	for levelScene in level_images:
+		var level = levelScene.instantiate()
+		levels.append(level)
+	
+	currentLevel = levels[0]
+	
 
 func _physics_process(delta):
 	if is_on_floor():
@@ -44,3 +60,9 @@ func pickup():
 	score = score + 1
 	print("Pickup!")
 	get_tree().call_group("UI", "set_score_text", score)
+
+func init_level():
+	texture.diffuse_texture = currentLevel.passive
+	texture.normal_texture = currentLevel.passive_n
+	
+	
