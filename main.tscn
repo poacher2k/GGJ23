@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" path="res://Player.gd" id="1_7ucny"]
 [ext_resource type="Script" path="res://main.gd" id="1_vulhb"]
-[ext_resource type="PackedScene" uid="uid://bpda3d2oft7a3" path="res://bg.tscn" id="2_q280r"]
+[ext_resource type="PackedScene" uid="uid://dhtjouk537h52" path="res://bg.tscn" id="2_q280r"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jt0dh"]
 radius = 4.0

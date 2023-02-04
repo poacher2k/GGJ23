@@ -1,8 +1,8 @@
-[gd_scene load_steps=5 format=3 uid="uid://bpda3d2oft7a3"]
+[gd_scene load_steps=5 format=3 uid="uid://dhtjouk537h52"]
 
-[ext_resource type="Texture2D" uid="uid://et15gjmq01c6" path="res://Assets/bg_1.5.png" id="1_dwvdf"]
-[ext_resource type="Texture2D" uid="uid://dfwjwqqm7xynd" path="res://Assets/BG_2.5.png" id="2_a4eef"]
-[ext_resource type="Texture2D" uid="uid://dihnykmhbuceb" path="res://Assets/BG_3.5.png" id="3_75p5x"]
+[ext_resource type="Texture2D" uid="uid://et15gjmq01c6" path="res://Assets/Background/Dirt/bg_1.5.png" id="1_kfekc"]
+[ext_resource type="Texture2D" uid="uid://dfwjwqqm7xynd" path="res://Assets/Background/Dirt/BG_2.5.png" id="2_i57a1"]
+[ext_resource type="Texture2D" uid="uid://dihnykmhbuceb" path="res://Assets/Background/Dirt/BG_3.5.png" id="3_o7mw7"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_5ujas"]
 size = Vector2(320, 16)
@@ -13,63 +13,63 @@ size = Vector2(320, 16)
 
 [node name="Sprite2D" type="Sprite2D" parent="Dirt"]
 position = Vector2(32, 32)
-texture = ExtResource("1_dwvdf")
+texture = ExtResource("1_kfekc")
 
 [node name="Sprite2D2" type="Sprite2D" parent="Dirt"]
 position = Vector2(32, 96)
-texture = ExtResource("2_a4eef")
+texture = ExtResource("2_i57a1")
 
 [node name="Sprite2D3" type="Sprite2D" parent="Dirt"]
 position = Vector2(32, 160)
-texture = ExtResource("3_75p5x")
+texture = ExtResource("3_o7mw7")
 
 [node name="Sprite2D4" type="Sprite2D" parent="Dirt"]
 position = Vector2(96, 32)
-texture = ExtResource("1_dwvdf")
+texture = ExtResource("1_kfekc")
 
 [node name="Sprite2D5" type="Sprite2D" parent="Dirt"]
 position = Vector2(96, 96)
-texture = ExtResource("2_a4eef")
+texture = ExtResource("2_i57a1")
 
 [node name="Sprite2D6" type="Sprite2D" parent="Dirt"]
 position = Vector2(96, 160)
-texture = ExtResource("3_75p5x")
+texture = ExtResource("3_o7mw7")
 
 [node name="Sprite2D7" type="Sprite2D" parent="Dirt"]
 position = Vector2(160, 32)
-texture = ExtResource("1_dwvdf")
+texture = ExtResource("1_kfekc")
 
 [node name="Sprite2D8" type="Sprite2D" parent="Dirt"]
 position = Vector2(160, 96)
-texture = ExtResource("2_a4eef")
+texture = ExtResource("2_i57a1")
 
 [node name="Sprite2D9" type="Sprite2D" parent="Dirt"]
 position = Vector2(160, 160)
-texture = ExtResource("3_75p5x")
+texture = ExtResource("3_o7mw7")
 
 [node name="Sprite2D10" type="Sprite2D" parent="Dirt"]
 position = Vector2(224, 32)
-texture = ExtResource("1_dwvdf")
+texture = ExtResource("1_kfekc")
 
 [node name="Sprite2D11" type="Sprite2D" parent="Dirt"]
 position = Vector2(224, 96)
-texture = ExtResource("2_a4eef")
+texture = ExtResource("2_i57a1")
 
 [node name="Sprite2D12" type="Sprite2D" parent="Dirt"]
 position = Vector2(224, 160)
-texture = ExtResource("3_75p5x")
+texture = ExtResource("3_o7mw7")
 
 [node name="Sprite2D13" type="Sprite2D" parent="Dirt"]
 position = Vector2(288, 32)
-texture = ExtResource("1_dwvdf")
+texture = ExtResource("1_kfekc")
 
 [node name="Sprite2D14" type="Sprite2D" parent="Dirt"]
 position = Vector2(288, 96)
-texture = ExtResource("2_a4eef")
+texture = ExtResource("2_i57a1")
 
 [node name="Sprite2D15" type="Sprite2D" parent="Dirt"]
 position = Vector2(288, 160)
-texture = ExtResource("3_75p5x")
+texture = ExtResource("3_o7mw7")
 
 [node name="Ceiling" type="StaticBody2D" parent="."]
 position = Vector2(160, 8)
