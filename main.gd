@@ -66,7 +66,7 @@ func createBgInstances():
 	allScenes.append(bg)
 	%GameBounds.add_child(bg)
 	
-		
+	
 	for i in range(half):
 		var n = bgScene.instantiate()
 		n.position.x = bgWidth * (i + 1)

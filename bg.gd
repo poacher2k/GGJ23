@@ -12,10 +12,25 @@ func _process(delta):
 	pass
 
 func setup():
+	setup_bg()
+	setup_ceiling()
+	setup_ground()
+
+func setup_bg():
 	for x in range(rows):
 		for y in range(cols):
 			var tile = get_random_tile()
 			$TileMap.set_cell(0, Vector2i(x, y), tile, Vector2i(0, 0))
+
+func setup_ceiling():
+	for x in range(rows):
+		$CeilingTilemap.set_cell(0, Vector2i(x, 0), 1, Vector2i(0, 0))
+	
+	
+func setup_ground():
+	var y = cols - 1
+	for x in range(rows):
+		$GroundTilemap.set_cell(0, Vector2i(x, y), 0, Vector2i(0, 0))
 
 func get_random_tile():
 	var num = randf()
