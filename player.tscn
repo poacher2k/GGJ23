@@ -1,7 +1,7 @@
-[gd_scene load_steps=7 format=3 uid="uid://cb6tickm0tymh"]
+[gd_scene load_steps=7 format=3 uid="uid://38mjpv2lra5y"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_gw74j"]
-[ext_resource type="Texture2D" uid="uid://ckruwretha55k" path="res://Assets/Character/seed_passive.png" id="2_lmlpo"]
+[ext_resource type="Texture2D" uid="uid://ckruwretha55k" path="res://Assets/Character/seed_passive_0.png" id="2_8fklf"]
 [ext_resource type="Texture2D" uid="uid://0cp1seb6lvfh" path="res://Assets/Light/default.png" id="3_wkoct"]
 [ext_resource type="PackedScene" uid="uid://eu4kh7r6mst1" path="res://Camera2D.tscn" id="4_6nyqa"]
 
@@ -27,7 +27,7 @@ collision_mask = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 material = SubResource("ShaderMaterial_x5rin")
-texture = ExtResource("2_lmlpo")
+texture = ExtResource("2_8fklf")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
 range_item_cull_mask = 0
