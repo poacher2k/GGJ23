@@ -27,7 +27,6 @@ func _ready():
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
 	if Input.is_action_just_pressed("Restart"):
-		player.queue_free()
 		get_tree().reload_current_scene()
 	
 	
@@ -41,11 +40,13 @@ func _physics_process(delta):
 			var last = allScenes.back()
 			first.position.x = last.position.x + bgWidth
 			allScenes.push_back(first)
+			first.setup()
 		elif currentBgIndex < prevBgIndex:
 			var last = allScenes.pop_back()
 			var first = allScenes.front();
 			last.position.x = first.position.x - bgWidth
 			allScenes.push_front(last)
+			last.setup()
 			
 		prevBgIndex = currentBgIndex
 		maybeSpawnItem(currentBgIndex)
