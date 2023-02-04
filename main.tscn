@@ -16,6 +16,7 @@ itemScene = ExtResource("4_xt46l")
 unique_name_in_owner = true
 
 [node name="UI" type="CanvasLayer" parent="." groups=["UI"]]
+visible = false
 follow_viewport_enabled = true
 script = ExtResource("3_18qy5")
 

@@ -18,6 +18,7 @@ var levels = []
 var currentLevel : CharacterLevel
 @onready var texture = $Sprite2D.texture
 
+var currentLevelIndex : int
 
 func _ready():
 	print($Sprite2D.get_canvas_item())
@@ -25,6 +26,7 @@ func _ready():
 		var level = levelScene.instantiate()
 		levels.append(level)
 	
+	currentLevelIndex = 0
 	currentLevel = levels[0]
 	
 
@@ -37,9 +39,11 @@ func _physics_process(delta):
 
 	if Input.is_action_just_pressed("Shoot"):
 		shoot()
+		set_active()
 		
 	if Input.is_action_just_released("Shoot"):
 		shot_position = null
+		set_passive()
 	
 	if shot_position:
 		var posDiff : Vector2 = shot_position - global_position
@@ -60,9 +64,27 @@ func pickup():
 	score = score + 1
 	print("Pickup!")
 	get_tree().call_group("UI", "set_score_text", score)
+	check_if_new_level()
+	
+func check_if_new_level():
+	for i in range(currentLevelIndex + 1, levels.size()):
+		var checkLevel = levels[i]
+		print(checkLevel.level)
+		if score >= checkLevel.level:
+			currentLevelIndex = i
+			currentLevel = checkLevel
+			init_level()
+			return
+	
 
 func init_level():
+	set_passive()
+
+func set_passive():
 	texture.diffuse_texture = currentLevel.passive
 	texture.normal_texture = currentLevel.passive_n
-	
+
+func set_active():
+	texture.diffuse_texture = currentLevel.active
+	texture.normal_texture = currentLevel.active_n
 	

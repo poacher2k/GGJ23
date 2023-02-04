@@ -1,11 +1,16 @@
-[gd_scene load_steps=10 format=3 uid="uid://38mjpv2lra5y"]
+[gd_scene load_steps=15 format=3 uid="uid://38mjpv2lra5y"]
 
 [ext_resource type="Script" path="res://Player.gd" id="1_gw74j"]
 [ext_resource type="PackedScene" uid="uid://by2hb1a87sbup" path="res://CharacterLevels/level_0.tscn" id="2_fstu0"]
 [ext_resource type="Texture2D" uid="uid://d0aip2fe43c37" path="res://Assets/Character/seed_active_0.png" id="3_6i5kl"]
+[ext_resource type="PackedScene" uid="uid://pbt3vop7wm70" path="res://CharacterLevels/level_1.tscn" id="3_fjkms"]
 [ext_resource type="Texture2D" uid="uid://0cp1seb6lvfh" path="res://Assets/Light/default.png" id="3_wkoct"]
 [ext_resource type="PackedScene" uid="uid://eu4kh7r6mst1" path="res://Camera2D.tscn" id="4_6nyqa"]
 [ext_resource type="Texture2D" uid="uid://bnjxowg61orn1" path="res://Assets/Character/seed_active_0_n.png" id="4_8kkjm"]
+[ext_resource type="PackedScene" uid="uid://g8rmp34d4k5q" path="res://CharacterLevels/level_2.tscn" id="4_ria63"]
+[ext_resource type="PackedScene" uid="uid://cejsr838ki7hc" path="res://CharacterLevels/level_3.tscn" id="5_hij7i"]
+[ext_resource type="PackedScene" uid="uid://bgglwrwd6a573" path="res://CharacterLevels/level_4.tscn" id="6_8pjfh"]
+[ext_resource type="PackedScene" uid="uid://ctbajbl7wl1oi" path="res://CharacterLevels/level_5.tscn" id="7_v4dcl"]
 
 [sub_resource type="CapsuleShape2D" id="CapsuleShape2D_jt0dh"]
 radius = 4.0
@@ -23,7 +28,7 @@ collision_mask = 7
 script = ExtResource("1_gw74j")
 HOOKSHOT_SPEED = 200.0
 ROTATION_VELOCITY = 12.0
-level_images = Array[PackedScene]([ExtResource("2_fstu0")])
+level_images = Array[PackedScene]([ExtResource("2_fstu0"), ExtResource("3_fjkms"), ExtResource("4_ria63"), ExtResource("5_hij7i"), ExtResource("6_8pjfh"), ExtResource("7_v4dcl")])
 
 [node name="PlayerCollisionShape" type="CollisionShape2D" parent="."]
 shape = SubResource("CapsuleShape2D_jt0dh")
