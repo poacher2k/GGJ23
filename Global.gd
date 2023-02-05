@@ -15,7 +15,6 @@ func _ready():
 func _process(delta):
 	if Input.is_action_just_pressed("Restart"):
 		reset()
-	pass
 
 
 func reset():
@@ -24,7 +23,7 @@ func reset():
 		if score < best_time:
 			best_time = score
 	
-		end_time = 0
+	end_time = 0
 	has_begun_sequence = false
 	get_tree().change_scene_to_file("res://main.tscn")
 	

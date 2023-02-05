@@ -9,7 +9,8 @@ func _ready():
 	var tex = "%2.2f s" % end
 	
 	if Global.best_time < 99999999999:
-		tex = tex + " (best time %2.2f s)" % Global.best_time
+		var best = Global.best_time * 0.001
+		tex = tex + " (best time %2.2f s)" % best
 	
 	$TimeLabel.text = tex
 

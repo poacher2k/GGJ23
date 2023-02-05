@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://dg5acyi3pxet3"]
+[gd_scene load_steps=6 format=3 uid="uid://1nc4i30b64ms"]
 
 [ext_resource type="Script" path="res://end_screen.gd" id="1_ybqlv"]
 [ext_resource type="Texture2D" uid="uid://b234j7ijhioh7" path="res://Assets/Background/bg.png" id="2_xvnq0"]
@@ -38,7 +38,6 @@ offset_top = 40.0
 offset_right = 212.0
 offset_bottom = 66.0
 theme = SubResource("Theme_wl86f")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "You Win!"
 
 [node name="TimeLabel" type="Label" parent="."]
@@ -48,7 +47,6 @@ offset_top = 72.0
 offset_right = 316.0
 offset_bottom = 98.0
 theme = SubResource("Theme_wl86f")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "23.35s"
 horizontal_alignment = 1
 vertical_alignment = 1
@@ -60,7 +58,6 @@ offset_top = 108.0
 offset_right = 242.0
 offset_bottom = 160.0
 theme = SubResource("Theme_wl86f")
-theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "Press R to restart
 (or click here)"
 horizontal_alignment = 1
