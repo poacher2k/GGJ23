@@ -38,3 +38,8 @@ theme_override_colors/font_color = Color(0, 0, 0, 1)
 text = "23.35s"
 horizontal_alignment = 1
 vertical_alignment = 1
+
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 40.0
+offset_bottom = 40.0
