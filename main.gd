@@ -29,9 +29,6 @@ func _ready():
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
-	if Input.is_action_just_pressed("Restart"):
-		get_tree().reload_current_scene()
-	
 	if Global.end_time and not Global.has_begun_sequence:
 		print("Starting!")
 		Global.has_begun_sequence = true
