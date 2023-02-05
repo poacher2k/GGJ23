@@ -41,5 +41,5 @@ vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 40.0
-offset_bottom = 40.0
+offset_right = 340.0
+offset_bottom = 192.0
