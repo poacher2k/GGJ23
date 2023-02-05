@@ -26,6 +26,8 @@ var last_shot_time = start_time
 
 var has_control = true
 
+var start_shot_pos : Vector2
+
 func _ready():
 	print($Sprite2D.get_canvas_item())
 	for levelScene in level_images:
@@ -52,7 +54,7 @@ func _physics_process(delta):
 		set_passive()
 	
 	if shot_position:
-		var posDiff : Vector2 = shot_position - global_position
+		var posDiff : Vector2 = shot_position - start_shot_pos
 		velocity = posDiff.normalized() * HOOKSHOT_SPEED
 	else:
 		rotate(0.01 * ROTATION_VELOCITY)
@@ -78,10 +80,20 @@ func shoot():
 	if point and not point.is_in_group("Obstacle"):
 		shot_position = $RayCast2D.get_collision_point()
 		last_shot_time = Time.get_ticks_msec()
+		start_shot_pos = global_position
 		
-		if Global.end_time:
+		var diff = shot_position - start_shot_pos
+		
+		
+		if Global.end_time and diff.y < 0:
 			has_control = false
-			$CollisionShape2D.disabled = true
+#			$CollisionShape2D.disabled = true
+			set_collision_layer_value(0, false)
+			set_collision_mask_value(0, false)
+			set_collision_mask_value(1, false)
+			set_collision_mask_value(2, false)
+			set_collision_mask_value(2, false)
+			set_collision_mask_value(3, false)
 			
 #		var posDiff : Vector2 = shot_position - global_position
 #		velocity += posDiff.normalized() * HOOKSHOT_SPEED
@@ -116,4 +128,7 @@ func set_passive():
 func set_active():
 	texture.diffuse_texture = currentLevel.active
 	texture.normal_texture = currentLevel.active_n
+	
+
+
 	

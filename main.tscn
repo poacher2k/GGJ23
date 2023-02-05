@@ -1,10 +1,47 @@
-[gd_scene load_steps=6 format=3 uid="uid://doq07kiyhro1l"]
+[gd_scene load_steps=9 format=3 uid="uid://doq07kiyhro1l"]
 
 [ext_resource type="Script" path="res://main.gd" id="1_vulhb"]
 [ext_resource type="PackedScene" uid="uid://bhpea17l31h26" path="res://bg.tscn" id="2_jt4xg"]
 [ext_resource type="Script" path="res://CanvasLayer.gd" id="3_18qy5"]
 [ext_resource type="PackedScene" uid="uid://38mjpv2lra5y" path="res://player.tscn" id="3_73rgr"]
 [ext_resource type="PackedScene" uid="uid://fyi17kjmlh6u" path="res://item.tscn" id="4_xt46l"]
+
+[sub_resource type="Animation" id="Animation_vm656"]
+resource_name = "fadeout"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 3),
+"transitions": PackedFloat32Array(1, 1),
+"update": 0,
+"values": [Color(1, 1, 1, 1), Color(1, 1, 1, 0)]
+}
+
+[sub_resource type="Animation" id="Animation_4fma6"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 0,
+"values": [Color(1, 1, 1, 1)]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_qhadb"]
+_data = {
+"RESET": SubResource("Animation_4fma6"),
+"fadeout": SubResource("Animation_vm656")
+}
 
 [node name="Main" type="Node2D"]
 script = ExtResource("1_vulhb")
@@ -40,3 +77,15 @@ text = "123"
 
 [node name="Items" type="Node2D" parent="."]
 unique_name_in_owner = true
+
+[node name="Timer" type="Timer" parent="."]
+wait_time = 2.5
+one_shot = true
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_qhadb")
+}
+
+[connection signal="timeout" from="Timer" to="." method="_on_timer_timeout"]
+[connection signal="animation_finished" from="AnimationPlayer" to="." method="_on_animation_player_animation_finished"]
