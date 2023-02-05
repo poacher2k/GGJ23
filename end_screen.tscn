@@ -1,8 +1,14 @@
-[gd_scene load_steps=3 format=3 uid="uid://1nc4i30b64ms"]
+[gd_scene load_steps=6 format=3 uid="uid://dg5acyi3pxet3"]
 
 [ext_resource type="Script" path="res://end_screen.gd" id="1_ybqlv"]
+[ext_resource type="Texture2D" uid="uid://b234j7ijhioh7" path="res://Assets/Background/bg.png" id="2_xvnq0"]
+[ext_resource type="Texture2D" uid="uid://ddsb6vwuyf35o" path="res://Assets/Background/bg_n.png" id="3_osg7r"]
 
 [sub_resource type="Theme" id="Theme_wl86f"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_lw63p"]
+diffuse_texture = ExtResource("2_xvnq0")
+normal_texture = ExtResource("3_osg7r")
 
 [node name="EndScreen" type="Control"]
 layout_mode = 3
@@ -14,6 +20,7 @@ grow_vertical = 2
 script = ExtResource("1_ybqlv")
 
 [node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 0
 offset_right = 340.0
 offset_bottom = 192.0
 
@@ -40,6 +47,8 @@ horizontal_alignment = 1
 vertical_alignment = 1
 
 [node name="TextureRect" type="TextureRect" parent="."]
+texture_filter = 1
 layout_mode = 0
 offset_right = 340.0
 offset_bottom = 192.0
+texture = SubResource("CanvasTexture_lw63p")
