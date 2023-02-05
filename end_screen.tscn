@@ -33,19 +33,19 @@ texture = SubResource("CanvasTexture_lw63p")
 
 [node name="Win" type="Label" parent="."]
 layout_mode = 0
-offset_left = 144.0
-offset_top = 40.0
-offset_right = 212.0
-offset_bottom = 66.0
+offset_left = 137.0
+offset_top = 38.0
+offset_right = 205.0
+offset_bottom = 64.0
 theme = SubResource("Theme_wl86f")
 text = "You Win!"
 
 [node name="TimeLabel" type="Label" parent="."]
 layout_mode = 0
-offset_left = 40.0
-offset_top = 72.0
-offset_right = 316.0
-offset_bottom = 98.0
+offset_left = 34.0
+offset_top = 60.0
+offset_right = 310.0
+offset_bottom = 86.0
 theme = SubResource("Theme_wl86f")
 text = "23.35s"
 horizontal_alignment = 1
@@ -54,9 +54,9 @@ vertical_alignment = 1
 [node name="Info" type="Label" parent="."]
 layout_mode = 0
 offset_left = 108.0
-offset_top = 108.0
+offset_top = 115.0
 offset_right = 242.0
-offset_bottom = 160.0
+offset_bottom = 167.0
 theme = SubResource("Theme_wl86f")
 text = "Press R to restart
 (or click here)"
@@ -66,9 +66,9 @@ vertical_alignment = 1
 [node name="Button" type="Button" parent="."]
 layout_mode = 0
 offset_left = 120.0
-offset_top = 136.0
+offset_top = 143.0
 offset_right = 228.0
-offset_bottom = 160.0
+offset_bottom = 167.0
 flat = true
 
 [node name="glitter" type="CPUParticles2D" parent="."]
