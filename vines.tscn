@@ -1,10 +1,20 @@
-[gd_scene load_steps=8 format=3 uid="uid://bdf4j5ues3peo"]
+[gd_scene load_steps=23 format=3 uid="uid://ra56qjq3pf6x"]
 
 [ext_resource type="Script" path="res://Vines.gd" id="1_u50fc"]
 [ext_resource type="Texture2D" uid="uid://bvhbxurcp1yyx" path="res://Assets/Wine segments/wine_1.png" id="2_okpr1"]
 [ext_resource type="Texture2D" uid="uid://bm00b7i8lrf5u" path="res://Assets/Wine segments/wine_1_n.png" id="3_eqiil"]
 [ext_resource type="Texture2D" uid="uid://b2dr7aeqph88l" path="res://Assets/Wine segments/wine_2.png" id="4_e7jtw"]
 [ext_resource type="Texture2D" uid="uid://rw3ib4bxjfyn" path="res://Assets/Wine segments/wine_2_n.png" id="5_hvuuu"]
+[ext_resource type="Texture2D" uid="uid://brjvlhip6esme" path="res://Assets/Wine segments/wine_3.png" id="6_ft6uf"]
+[ext_resource type="Texture2D" uid="uid://de0idols8gfbl" path="res://Assets/Wine segments/wine_3_n.png" id="7_8kocx"]
+[ext_resource type="Texture2D" uid="uid://cfbpbibuaa3aw" path="res://Assets/Wine segments/wine_4.png" id="8_7pu41"]
+[ext_resource type="Texture2D" uid="uid://sbdrjs8ijc10" path="res://Assets/Wine segments/wine_4_n.png" id="9_or5jg"]
+[ext_resource type="Texture2D" uid="uid://csvo8y6levmn3" path="res://Assets/Wine segments/wine_5.png" id="10_ujaqw"]
+[ext_resource type="Texture2D" uid="uid://bvgicfdhmmggf" path="res://Assets/Wine segments/wine_5_n.png" id="11_k8hhn"]
+[ext_resource type="Texture2D" uid="uid://it0sxo8hj8ho" path="res://Assets/Wine segments/wine_6.png" id="12_3ei0s"]
+[ext_resource type="Texture2D" uid="uid://d1ap4byl81nr5" path="res://Assets/Wine segments/wine_6_n.png" id="13_useb0"]
+[ext_resource type="Texture2D" uid="uid://b2j42xkuon32e" path="res://Assets/Wine segments/wine_7.png" id="14_00pmd"]
+[ext_resource type="Texture2D" uid="uid://dg4l0mxqhy4ho" path="res://Assets/Wine segments/wine_7_n.png" id="15_kbe21"]
 
 [sub_resource type="CanvasTexture" id="CanvasTexture_g5ppe"]
 diffuse_texture = ExtResource("2_okpr1")
@@ -14,7 +24,27 @@ normal_texture = ExtResource("3_eqiil")
 diffuse_texture = ExtResource("4_e7jtw")
 normal_texture = ExtResource("5_hvuuu")
 
+[sub_resource type="CanvasTexture" id="CanvasTexture_ao1fx"]
+diffuse_texture = ExtResource("6_ft6uf")
+normal_texture = ExtResource("7_8kocx")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_xfyqb"]
+diffuse_texture = ExtResource("8_7pu41")
+normal_texture = ExtResource("9_or5jg")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_r0qb0"]
+diffuse_texture = ExtResource("10_ujaqw")
+normal_texture = ExtResource("11_k8hhn")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_7rjso"]
+diffuse_texture = ExtResource("12_3ei0s")
+normal_texture = ExtResource("13_useb0")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_g0xxq"]
+diffuse_texture = ExtResource("14_00pmd")
+normal_texture = ExtResource("15_kbe21")
+
 [node name="Vines" type="Node2D"]
 position = Vector2(0, -4)
 script = ExtResource("1_u50fc")
-vine_variations = Array[CanvasTexture]([SubResource("CanvasTexture_g5ppe"), SubResource("CanvasTexture_8j7x4")])
+vine_variations = Array[CanvasTexture]([SubResource("CanvasTexture_g5ppe"), SubResource("CanvasTexture_8j7x4"), SubResource("CanvasTexture_ao1fx"), SubResource("CanvasTexture_xfyqb"), SubResource("CanvasTexture_r0qb0"), SubResource("CanvasTexture_7rjso"), SubResource("CanvasTexture_g0xxq")])
