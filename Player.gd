@@ -24,9 +24,13 @@ var start_time = Time.get_ticks_msec()
 var last_shot_time = start_time
 @export var TIME_BETWEEN_SHOTS = 250
 
+@export var vines : PackedScene
+
 var has_control = true
 
 var start_shot_pos : Vector2
+
+var vinesInstance
 
 func _ready():
 	print($Sprite2D.get_canvas_item())
@@ -34,6 +38,8 @@ func _ready():
 		var level = levelScene.instantiate()
 		levels.append(level)
 	
+	vinesInstance = vines.instantiate()
+	add_child(vinesInstance)
 	currentLevelIndex = 0
 	currentLevel = levels[0]
 	
@@ -52,10 +58,15 @@ func _physics_process(delta):
 	if Input.is_action_just_released("Shoot") && has_control:
 		shot_position = null
 		set_passive()
+		vinesInstance.visible = false
 	
 	if shot_position:
-		var posDiff : Vector2 = shot_position - start_shot_pos
-		velocity = posDiff.normalized() * HOOKSHOT_SPEED
+		if has_control:
+			var posDiff : Vector2 = shot_position - global_position
+			velocity = posDiff.normalized() * HOOKSHOT_SPEED
+		else:
+			var posDiff : Vector2 = shot_position - start_shot_pos
+			velocity = posDiff.normalized() * HOOKSHOT_SPEED
 	else:
 		rotate(0.01 * ROTATION_VELOCITY)
 	
@@ -82,8 +93,11 @@ func shoot():
 		last_shot_time = Time.get_ticks_msec()
 		start_shot_pos = global_position
 		
-		var diff = shot_position - start_shot_pos
+		var diff : Vector2 = shot_position - start_shot_pos
 		
+		var len = diff.length()
+		vinesInstance.spawn_stuff(len)
+		vinesInstance.visible = true
 		
 		if Global.end_time and diff.y < 0:
 			has_control = false

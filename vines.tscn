@@ -1,0 +1,20 @@
+[gd_scene load_steps=8 format=3 uid="uid://bdf4j5ues3peo"]
+
+[ext_resource type="Script" path="res://Vines.gd" id="1_u50fc"]
+[ext_resource type="Texture2D" uid="uid://bvhbxurcp1yyx" path="res://Assets/Wine segments/wine_1.png" id="2_okpr1"]
+[ext_resource type="Texture2D" uid="uid://bm00b7i8lrf5u" path="res://Assets/Wine segments/wine_1_n.png" id="3_eqiil"]
+[ext_resource type="Texture2D" uid="uid://b2dr7aeqph88l" path="res://Assets/Wine segments/wine_2.png" id="4_e7jtw"]
+[ext_resource type="Texture2D" uid="uid://rw3ib4bxjfyn" path="res://Assets/Wine segments/wine_2_n.png" id="5_hvuuu"]
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_g5ppe"]
+diffuse_texture = ExtResource("2_okpr1")
+normal_texture = ExtResource("3_eqiil")
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_8j7x4"]
+diffuse_texture = ExtResource("4_e7jtw")
+normal_texture = ExtResource("5_hvuuu")
+
+[node name="Vines" type="Node2D"]
+position = Vector2(0, -4)
+script = ExtResource("1_u50fc")
+vine_variations = Array[CanvasTexture]([SubResource("CanvasTexture_g5ppe"), SubResource("CanvasTexture_8j7x4")])
