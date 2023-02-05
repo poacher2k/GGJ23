@@ -47,7 +47,7 @@ func _physics_process(delta):
 		shoot()
 		set_active()
 		
-	if Input.is_action_just_released("Shoot"):
+	if Input.is_action_just_released("Shoot") && has_control:
 		shot_position = null
 		set_passive()
 	
@@ -78,6 +78,10 @@ func shoot():
 	if point and not point.is_in_group("Obstacle"):
 		shot_position = $RayCast2D.get_collision_point()
 		last_shot_time = Time.get_ticks_msec()
+		
+		if Global.end_time:
+			has_control = false
+			$CollisionShape2D.disabled = true
 #		var posDiff : Vector2 = shot_position - global_position
 #		velocity += posDiff.normalized() * HOOKSHOT_SPEED
 		

@@ -62,6 +62,9 @@ func setup_ground():
 
 	
 func get_random_surrounding_tile():
+	if Global.end_time:
+		return 0
+		
 	var num = randf()
 	
 	if num < 0.0005:
