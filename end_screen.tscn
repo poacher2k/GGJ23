@@ -71,4 +71,17 @@ offset_right = 228.0
 offset_bottom = 160.0
 flat = true
 
+[node name="glitter" type="CPUParticles2D" parent="."]
+position = Vector2(169, 96)
+amount = 10
+lifetime = 5.55
+preprocess = 1.25
+speed_scale = 9.75
+explosiveness = 0.16
+randomness = 0.89
+emission_shape = 3
+emission_rect_extents = Vector2(10, 10)
+spread = 180.0
+gravity = Vector2(0, 0)
+
 [connection signal="pressed" from="Button" to="." method="_on_button_pressed"]
