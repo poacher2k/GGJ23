@@ -10,7 +10,7 @@ config_version=5
 
 [application]
 
-config/name="Root Swing"
+config/name="Rooty Shooty"
 run/main_scene="res://main.tscn"
 config/features=PackedStringArray("4.0", "GL Compatibility")
 config/icon="res://icon.svg"
@@ -23,8 +23,7 @@ Global="*res://Global.gd"
 
 window/size/viewport_width=342
 window/size/viewport_height=192
-window/size/window_width_override=640
-window/size/window_height_override=360
+window/size/mode=2
 window/stretch/mode="viewport"
 
 [input]
@@ -55,3 +54,5 @@ Restart={
 [rendering]
 
 renderer/rendering_method="gl_compatibility"
+2d/macos_native_icon=""
+2d/name="Rooty Shooty"

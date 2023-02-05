@@ -11,7 +11,7 @@
 [ext_resource type="PackedScene" uid="uid://cejsr838ki7hc" path="res://CharacterLevels/level_3.tscn" id="5_hij7i"]
 [ext_resource type="PackedScene" uid="uid://bgglwrwd6a573" path="res://CharacterLevels/level_4.tscn" id="6_8pjfh"]
 [ext_resource type="PackedScene" uid="uid://ctbajbl7wl1oi" path="res://CharacterLevels/level_5.tscn" id="7_v4dcl"]
-[ext_resource type="PackedScene" uid="uid://bdf4j5ues3peo" path="res://vines.tscn" id="8_jweev"]
+[ext_resource type="PackedScene" uid="uid://ra56qjq3pf6x" path="res://vines.tscn" id="8_jweev"]
 [ext_resource type="Texture2D" uid="uid://c5t2w8tskap35" path="res://Assets/Character/arrow_indicator.png" id="12_w0e5b"]
 [ext_resource type="Texture2D" uid="uid://6ooq2yqo5lw3" path="res://Assets/Character/arrow_indicator_n.png" id="13_53s71"]
 
