@@ -20,6 +20,12 @@ var currentLevel : CharacterLevel
 
 var currentLevelIndex : int
 
+var start_time = Time.get_ticks_msec()
+var last_shot_time = start_time
+@export var TIME_BETWEEN_SHOTS = 250
+
+var has_control = true
+
 func _ready():
 	print($Sprite2D.get_canvas_item())
 	for levelScene in level_images:
@@ -37,7 +43,7 @@ func _physics_process(delta):
 		# Add the gravity.
 		velocity.y += gravity * delta
 
-	if Input.is_action_just_pressed("Shoot"):
+	if Input.is_action_just_pressed("Shoot") && can_shoot():
 		shoot()
 		set_active()
 		
@@ -52,12 +58,28 @@ func _physics_process(delta):
 		rotate(0.01 * ROTATION_VELOCITY)
 	
 	move_and_slide()
+	
+	var collision = get_last_slide_collision()
+	
+	if collision:
+		var collider = collision.get_collider()
+		if collider.is_in_group("Obstacle"):
+			get_tree().reload_current_scene()
 
+func can_shoot():
+	if not has_control:
+		return false
+	
+	var now = Time.get_ticks_msec()
+	return now - last_shot_time > TIME_BETWEEN_SHOTS
 
 func shoot():
 	var point = $RayCast2D.get_collider()
-	if point:
+	if point and not point.is_in_group("Obstacle"):
 		shot_position = $RayCast2D.get_collision_point()
+		last_shot_time = Time.get_ticks_msec()
+#		var posDiff : Vector2 = shot_position - global_position
+#		velocity += posDiff.normalized() * HOOKSHOT_SPEED
 		
 
 func pickup():
@@ -74,7 +96,9 @@ func check_if_new_level():
 			currentLevelIndex = i
 			currentLevel = checkLevel
 			init_level()
-			return
+			
+			if i == levels.size() - 1:
+				Global.end_time = Time.get_ticks_msec() - Global.start_time
 	
 
 func init_level():

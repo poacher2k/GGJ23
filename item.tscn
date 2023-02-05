@@ -1,9 +1,73 @@
-[gd_scene load_steps=3 format=3 uid="uid://fyi17kjmlh6u"]
+[gd_scene load_steps=9 format=3 uid="uid://fyi17kjmlh6u"]
 
 [ext_resource type="Script" path="res://Item.gd" id="1_85acx"]
+[ext_resource type="Texture2D" uid="uid://cei8r14cv3ge4" path="res://Assets/items/item_seed.png" id="2_a7s0a"]
+[ext_resource type="Texture2D" uid="uid://di82awox86fom" path="res://Assets/items/item_seed_n.png" id="3_jb778"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_3844m"]
 radius = 8.0
+
+[sub_resource type="CanvasTexture" id="CanvasTexture_jyvdg"]
+diffuse_texture = ExtResource("2_a7s0a")
+normal_texture = ExtResource("3_jb778")
+
+[sub_resource type="Animation" id="Animation_uoug5"]
+resource_name = "Hover"
+loop_mode = 1
+step = 0.25
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(-4, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -4, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0, 0, 0, 0, 0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0, 4, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0, -4, -0.25, 0, 0.25, 0, 0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0, 0.25, 0.5, 0.75, 1)
+}
+
+[sub_resource type="Animation" id="Animation_jrenh"]
+length = 0.001
+tracks/0/type = "bezier"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("Sprite2D:position:x")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+tracks/1/type = "bezier"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("Sprite2D:position:y")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = {
+"handle_modes": PackedInt32Array(0),
+"points": PackedFloat32Array(0, -0.25, 0, 0.25, 0),
+"times": PackedFloat32Array(0)
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_u6nnf"]
+_data = {
+"Hover": SubResource("Animation_uoug5"),
+"RESET": SubResource("Animation_jrenh")
+}
 
 [node name="Item" type="Area2D"]
 position = Vector2(160, 80)
@@ -12,5 +76,22 @@ script = ExtResource("1_85acx")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 shape = SubResource("CircleShape2D_3844m")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+texture = SubResource("CanvasTexture_jyvdg")
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="Sprite2D"]
+amount = 5
+lifetime = 0.25
+randomness = 0.08
+emission_shape = 1
+emission_sphere_radius = 6.79
+gravity = Vector2(2.08165e-12, 500)
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+autoplay = "Hover"
+libraries = {
+"": SubResource("AnimationLibrary_u6nnf")
+}
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

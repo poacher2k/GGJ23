@@ -23,11 +23,12 @@ diffuse_texture = ExtResource("3_6i5kl")
 normal_texture = ExtResource("4_8kkjm")
 
 [node name="Player" type="CharacterBody2D" groups=["Player"]]
+light_mask = 0
 position = Vector2(40, 80)
-collision_mask = 7
+collision_mask = 14
 script = ExtResource("1_gw74j")
-HOOKSHOT_SPEED = 200.0
-ROTATION_VELOCITY = 12.0
+HOOKSHOT_SPEED = 150.0
+ROTATION_VELOCITY = 13.0
 level_images = Array[PackedScene]([ExtResource("2_fstu0"), ExtResource("3_fjkms"), ExtResource("4_ria63"), ExtResource("5_hij7i"), ExtResource("6_8pjfh"), ExtResource("7_v4dcl")])
 
 [node name="PlayerCollisionShape" type="CollisionShape2D" parent="."]
@@ -35,14 +36,15 @@ shape = SubResource("CapsuleShape2D_jt0dh")
 
 [node name="RayCast2D" type="RayCast2D" parent="."]
 target_position = Vector2(2.08165e-12, -2000)
-collision_mask = 2
+collision_mask = 10
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
+light_mask = 0
 material = SubResource("ShaderMaterial_x5rin")
 texture = SubResource("CanvasTexture_536m7")
 
 [node name="PointLight2D" type="PointLight2D" parent="."]
-range_item_cull_mask = 0
+energy = 0.75
 texture = ExtResource("3_wkoct")
 
 [node name="Camera2D" parent="." instance=ExtResource("4_6nyqa")]

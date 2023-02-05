@@ -12,6 +12,7 @@ var bgWidth = 320
 
 var player
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	if bgInstances % 2 != 0:
@@ -23,6 +24,8 @@ func _ready():
 	$UI.set_player(player)
 	
 	createBgInstances()
+	
+	Global.start_time = Time.get_ticks_msec()
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
 func _process(delta):
@@ -78,6 +81,9 @@ var chance_increaase_per_no = 0.15
 var chance_for_item = 1
 
 func maybeSpawnItem(index: int):
+	if Global.end_time:
+		return
+		
 	print(considered_indexes.has(index))
 	if considered_indexes.has(index):
 		return
