@@ -82,6 +82,7 @@ func shoot():
 		if Global.end_time:
 			has_control = false
 			$CollisionShape2D.disabled = true
+			
 #		var posDiff : Vector2 = shot_position - global_position
 #		velocity += posDiff.normalized() * HOOKSHOT_SPEED
 		
