@@ -32,7 +32,11 @@ func _process(delta):
 	if Input.is_action_just_pressed("Restart"):
 		get_tree().reload_current_scene()
 	
-	
+	if Global.end_time and not Global.has_begun_sequence:
+		print("Starting!")
+		Global.has_begun_sequence = true
+		$Timer.start()
+
 
 func _physics_process(delta):
 	var currentBgIndex = floor($Player.position.x / bgWidth)
@@ -106,3 +110,12 @@ func spawn_item(index):
 	newItem.position.x = lastBg.position.x + randf_range(0, bgWidth)
 	newItem.position.y = 32 + randf_range(0, 128)
 	%Items.add_child(newItem)
+
+
+func _on_timer_timeout():
+	print("timeout")
+	$AnimationPlayer.play("fadeout")
+
+
+func _on_animation_player_animation_finished(anim_name):
+	get_tree().change_scene_to_file("res://end_screen.tscn")
